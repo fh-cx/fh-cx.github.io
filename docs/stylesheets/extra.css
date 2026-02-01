@@ -1,0 +1,29 @@
+/* docs/stylesheets/extra.css */
+/* 自定义样式 */
+
+/* 代码块样式增强 */
+.highlight .copybtn {
+    opacity: 0.8;
+}
+
+/* 数学公式样式 */
+.math {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* 网络安全相关的警告框 */
+.admonition.security {
+    border-left-color: #ff6b6b;
+}
+
+.admonition.security .admonition-title {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+/* 响应式表格 */
+.md-typeset table:not([class]) {
+    display: table;
+    width: 100%;
+}

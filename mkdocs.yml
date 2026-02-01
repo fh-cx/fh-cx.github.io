@@ -1,0 +1,146 @@
+# mkdocs.yml
+site_name: From 0 to 1 网络安全
+site_description: 个人数学、计算机科学与网络安全知识库
+site_author: fh-cx
+site_url: https://fh-cx.github.io/
+# 使用Material主题
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+
+# 插件配置
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - awesome-pages
+
+# 扩展配置
+markdown_extensions:
+  # 数学公式支持
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  
+  # 代码高亮和语法增强
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+  # 表格和任务列表
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  
+  # 目录和导航
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # 其他增强功能
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+# 数学公式渲染配置
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/font-awesome@6.4.0/js/all.min.js
+
+extra_css:
+  - stylesheets/extra.css
+
+# 导航结构
+nav:
+  - 首页: index.md
+  - 数学:
+    - 线性代数: math/linear-algebra.md
+    - 微积分: math/calculus.md
+    - 概率统计: math/probability-statistics.md
+    - 离散数学: math/discrete-math.md
+  - 计算机科学:
+    - 数据结构: cs/data-structures.md
+    - 算法: cs/algorithms.md
+    - 编程语言:
+      - Python: cs/languages/python.md
+      - C++: cs/languages/cpp.md
+      - Java: 
+        - 基础: cs/languages/java-basics.md
+    - 操作系统: cs/operating-systems.md
+    - 计算机网络: cs/computer-networks.md
+  - 网络安全:
+    - 密码学: security/cryptography.md
+    - Web安全: security/web-security.md
+    - 渗透测试: security/penetration-testing.md
+    - 逆向工程: security/reverse-engineering.md
+    - pwn: security/pwn.md
+    - 安全工具: security/tools.md
+  - 项目笔记:
+    - 项目一: projects/project1.md
+    - 项目二: projects/project2.md
+  - 关于: about.md
+
+# 额外配置
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fh-cx/fh-cx.github.io
+      name: GitHub
+
+
+# 版权信息
+copyright: |
+  &copy; 2026 fh-cx. 本文档采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> 许可协议.
+
+# 编辑链接
+edit_uri: edit/main/docs/
+
+# 仓库配置
+repo_name: fh-cx/fh-cx.github.io
+repo_url: https://github.com/fh-cx/fh-cx.github.io
+
+# GitHub Pages 分支
+remote_branch: gh-pages    
+remote_name: origin
